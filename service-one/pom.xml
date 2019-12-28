@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>demo4lc</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>serviceone</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>service-one</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>2.4.9</version>
+                <configuration>
+                    <inputSpec>http://localhost:9080/v2/api-docs</inputSpec>
+                    <language>java</language>
+                    <library>resttemplate</library>
+                    <groupId>com.example</groupId>
+                    <artifactId>service-one-swagger-api-client</artifactId>
+                    <modelPackage>${groupId}.service-one.client.model</modelPackage>
+                    <apiPackage>${groupId}.service-one.client.api</apiPackage>
+                    <invokerPackage>${groupId}.service-one.client.invoker</invokerPackage>
+                    <output>${project.basedir/api-client}</output>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-swagger-javaclient</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
