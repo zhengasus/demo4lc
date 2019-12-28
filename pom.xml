@@ -12,6 +12,7 @@
     <artifactId>demo4lc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo4lc</name>
+    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -62,11 +63,6 @@
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>${swagger.version}</version>
         </dependency>
         <!-- 常用util类-->
         <dependency>

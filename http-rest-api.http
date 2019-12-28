@@ -1,0 +1,6 @@
+### 1、获取用户
+GET {{host}}/{{version}}/user/10
+Accept: */*
+Cache-Control: no-cache
+
+###

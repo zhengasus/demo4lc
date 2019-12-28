@@ -17,7 +17,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -27,7 +31,8 @@
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
                 <version>2.4.9</version>
                 <configuration>
-                    <inputSpec>http://localhost:9080/v2/api-docs</inputSpec>
+                    <!--FIXME:如何避免打包后转化为https-->
+                    <inputSpec>http://localhost:8080/v2/api-docs</inputSpec>
                     <language>java</language>
                     <library>resttemplate</library>
                     <groupId>com.example</groupId>
